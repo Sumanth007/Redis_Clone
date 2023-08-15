@@ -37,7 +37,7 @@ public class Main {
       System.out.println("PONG");
 			// System.out.println("Server received: " + line); 
 			// toClient.println("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!");         
-      server.close();
+      // server.close();
 
        } 
       }
