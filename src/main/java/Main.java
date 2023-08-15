@@ -17,27 +17,27 @@ public class Main {
        int port = 6379;
        try {
          serverSocket = new ServerSocket(port);
-        //  serverSocket.setReuseAddress(true);
+         serverSocket.setReuseAddress(true);
         //  // Wait for connection from client.
         //  clientSocket = serverSocket.accept();
-        // serverSocket.setSoTimeout(1000); 
+        // serverSocket.setSoTimeout(10000); 
         System.out.println("Heeeyyy");
       while(true) {
 			System.out.println("Waiting for client on port " + serverSocket.getLocalPort() + "..."); 
 
-			Socket server = serverSocket.accept();
-			System.out.println("Just connected to " + server.getRemoteSocketAddress()); 
+			clientSocket = serverSocket.accept();
+			System.out.println("Just connected to " + clientSocket.getRemoteSocketAddress()); 
 
 			PrintWriter toClient = 
-				new PrintWriter(server.getOutputStream(),true);
+				new PrintWriter(clientSocket.getOutputStream(),true);
 			BufferedReader fromClient =
 				new BufferedReader(
-						new InputStreamReader(server.getInputStream()));
+						new InputStreamReader(clientSocket.getInputStream()));
 			String line = fromClient.readLine();
-      System.out.println("PONG");
-			// System.out.println("Server received: " + line); 
+			System.out.println("Server received: " + line); 
+      toClient.println("PONG");
 			// toClient.println("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!");         
-      // server.close();
+      toClient.close();
 
        } 
       }
