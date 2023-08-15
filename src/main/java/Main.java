@@ -35,7 +35,7 @@ public class Main {
 						new InputStreamReader(clientSocket.getInputStream()));
 			String line = fromClient.readLine();
 			System.out.println("Server received: " + line); 
-      toClient.println("PONG\r");
+      toClient.println("+PONG\r");
 			// toClient.println("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!");         
       toClient.close();
 
