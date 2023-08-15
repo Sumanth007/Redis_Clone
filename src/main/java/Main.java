@@ -41,16 +41,14 @@ public class Main {
 				new BufferedReader(
 						new InputStreamReader(clientSocket.getInputStream()));
 
-      while(true){
-      String line = fromClient.readLine();
-			System.out.println("Server received: " + line); 
-      toClient.write("+PONG\r\n"+"\n");
-      toClient.flush();
-      // toClient.write("Press \" close \" to close the connection");
-      // toClient.flush();
-      // String check= fromClient.readLine();
-      // if(check.equals("close"))break;
-    }
+      String line;
+      while ((line = fromClient.readLine()) != null) {
+        if (line.equals("ping")) {
+          toClient.write("+PONG\r\n");
+          toClient.flush();
+        }
+        System.out.println(line);
+      }
       
 			// toClient.println("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!");         
       // toClient.close();  
