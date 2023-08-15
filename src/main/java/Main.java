@@ -44,7 +44,7 @@ public class Main {
       while(true){
       String line = fromClient.readLine();
 			System.out.println("Server received: " + line); 
-      toClient.write("+PONG\r\n");
+      toClient.write("+PONG\r\n"+"\n");
       toClient.flush();
       // toClient.write("Press \" close \" to close the connection");
       // toClient.flush();
