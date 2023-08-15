@@ -46,14 +46,14 @@ public class Main {
 			System.out.println("Server received: " + line); 
       toClient.write("+PONG\r\n");
       toClient.flush();
-      toClient.write("Press \" close \" to close the connection");
-      toClient.flush();
-      String check= fromClient.readLine();
-      if(check.equals("close"))break;
+      // toClient.write("Press \" close \" to close the connection");
+      // toClient.flush();
+      // String check= fromClient.readLine();
+      // if(check.equals("close"))break;
     }
       
 			// toClient.println("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!");         
-      toClient.close();
+      // toClient.close();
 
        } 
       }
