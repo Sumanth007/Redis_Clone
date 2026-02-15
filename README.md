@@ -12,7 +12,6 @@ A lightweight, educational implementation of Redis server in Java, featuring in-
 - [Implementation Details](#implementation-details)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## 🎯 Overview
 
@@ -214,10 +213,6 @@ public class DelHandler extends BaseHandler {
     }
 }
 ```
-
-## 📄 License
-
-This project is open source and available for educational purposes.
 
 ---
 
